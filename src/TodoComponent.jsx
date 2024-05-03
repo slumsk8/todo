@@ -16,7 +16,7 @@ export function TodoComponent() {
 
   const createTodo = async function () {
     const newTodoTitleValue = newTodoTitle;
-    let Todo = new Parse.Object("Todo");
+    let Todo = new Parse.Object("todo");
     Todo.set("title", newTodoTitleValue);
     Todo.set("done", false);
     try {
@@ -31,7 +31,7 @@ export function TodoComponent() {
   };
 
   const readTodos = async function () {
-    const parseQuery = new Parse.Query("Todo");
+    const parseQuery = new Parse.Query("todo");
     try {
       let todos = await parseQuery.find();
       setReadResults(todos);
