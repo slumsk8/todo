@@ -13,6 +13,8 @@ RUN npm install
 # Build the React application
 RUN npm run build
 
+RUN npm run start
+
 # Expose port 3000
 EXPOSE 3000
 
